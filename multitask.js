@@ -40,7 +40,7 @@ dohash();
 
 // Things to notice
 
-// fileread function suppose to be fast cause its just reading from a file
+// fileread function suppose to be fast cause its just reading from a file(hard drive)
 //OS level exectuation will always perform faster then function using threadpool
 
 // Why File read  is slower?
