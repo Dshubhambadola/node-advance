@@ -1,5 +1,5 @@
 //process.env.UV_THREADPOOL_SIZE = 2  // decreasing the size of threadpool from default size of 4
-process.env.UV_THREADPOOL_SIZE = 5  // increasing the size of threadpool
+// // increasing the size of threadpool
 
 // Increasing and decreasing the size of threadpool give the diffrent result in complication of task
 
