@@ -1,12 +1,12 @@
 // weird node behavior
-
+process.env.UV_THREADPOOL_SIZE = 8;
 const https = require('https');
 const crypto = require('crypto');
 const fs = require('fs');
 const start = Date.now();
 
 function doRequest() {
-  https.request('https://www.google.com',res =>{
+  https.request('https://www.google.com',res =>{ // 3
     res.on('data',() =>{})
     res.on('end',() =>{
       console.log(Date.now() - start);
@@ -15,7 +15,7 @@ function doRequest() {
 }
 
 function dohash() {
-  crypto.pbkdf2('a','b',100000,512,'sha512',() =>{
+  crypto.pbkdf2('a','b',100000,512,'sha512',() =>{  // 2
     console.log('Hash:' , Date.now() - start); // returns 647 on local
     })
 }
@@ -23,8 +23,8 @@ function dohash() {
 
 doRequest();
 
-fs.readFile('multitask.js','utf8',() =>{
-  console.log('FS', Date.now() - start);
+fs.readFile('multitask.js','utf8',() =>{// 1
+  console.log('FS', Date.now() - start); 
 })
 
 dohash();
