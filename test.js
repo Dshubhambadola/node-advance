@@ -7,7 +7,7 @@ const newArr = arr.map(function(item, index) {
 console.log(newArr);
 
 const sum = arr.reduce(function(total, next) {
-    console.log(total);
+    console.log("change in test testing git refrence to my future self",total);
   return total
 });
 
